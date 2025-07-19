@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta NAME="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;background-color: #blue;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 50px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color:pink;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        button {;
+            color: orange;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: pink;
+        }
+        result {
+            font-weight: italic;
+            color:pink;
+        }
+
+       
+
+    </style>
+</head>
+   <body    >
+    <div class="container">
+	
+        <h1>Student Percentage Calculator</h1>
+		
+		<label for="username">Name:</label>
+        <input type="username" id="username" placeholder="Enter student name" >
+		
+        <label for="subject1">Marks in Subject 1:</label>
+        <input type="number" id="subject1" placeholder="Enter marks" required>
+        
+        <label for="subject2">Marks in Subject 2:</label>
+        <input type="number" id="subject2" placeholder="Enter marks" required>
+        
+        <label for="subject3">Marks in Subject 3:</label>
+        <input type="number" id="subject3" placeholder="Enter marks" required>
+        
+        <label for="subject4">Marks in Subject 4:</label>
+        <input type="number" id="subject4" placeholder="Enter marks" required>
+        
+        <label for="subject5">Marks in Subject 5:</label>
+        <input type="number" id="subject5" placeholder="Enter marks" required>
+
+        <label for="subject6">Marks in Subject 6:</label>
+        <input type="number" id="subject6" placeholder="Enter marks" required>
+		
+		<label for="subject7">Marks in Subject 7:</label>
+        <input type="number" id="subject6" placeholder="Enter marks" required>
+        
+        <button onclick="calculatePercentage()"> Calculate Percentage </button>
+        
+        <p class="result" id="result"></p>
+    </div>
+
+    <script>
+        function calculatePercentage() {
+            const subject1 = parseFloat(document.getElementById('subject1').value) || 0;
+            const subject2 = parseFloat(document.getElementById('subject2').value) || 0;
+            const subject3 = parseFloat(document.getElementById('subject3').value) || 0;
+            const subject4= parseFloat(document.getElementById('subject4').value) || 0;
+			 const subject5 = parseFloat(document.getElementById('subject5').value) || 0;
+			 const subject6 = parseFloat(document.getElementById('subject6').value) || 0;
+			 
+            
+            const totalMarks = subject1 + subject2 + subject3 + subject4 + subject5;
+            const percentage = (totalMarks / 500) * 100;
+
+            document.getElementById('result').textContent = 
+                `Total Marks: ${totalMarks}/500| Percentage: ${percentage.toFixed(2)}%`;
+        }
+    </script>
+</body>
+</html>
+
